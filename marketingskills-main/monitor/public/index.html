@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101522">
+    <title>Marketing Skills Monitor</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Marketing Skills Monitor home">
+          <span class="brand-mark" aria-hidden="true">M</span>
+          <span>Marketing Skills <span class="muted">/ Monitor</span></span>
+        </a>
+        <div class="live-indicator" id="connection-state" role="status">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span>Connecting</span>
+        </div>
+      </header>
+
+      <section class="intro">
+        <p class="eyebrow">SERVICE HEALTH</p>
+        <h1>Endpoint status</h1>
+        <p class="intro-copy">A live view of the services your marketing stack depends on.</p>
+      </section>
+
+      <section class="summary" aria-label="Status summary">
+        <article class="summary-card">
+          <span class="summary-label">Monitored</span>
+          <strong id="total-count">—</strong>
+        </article>
+        <article class="summary-card">
+          <span class="summary-label">Operational</span>
+          <strong id="up-count" class="tone-up">—</strong>
+        </article>
+        <article class="summary-card">
+          <span class="summary-label">Issues</span>
+          <strong id="down-count" class="tone-down">—</strong>
+        </article>
+        <article class="summary-card updated-card">
+          <span class="summary-label">Last updated</span>
+          <strong id="last-updated">Waiting for first check</strong>
+        </article>
+      </section>
+
+      <section class="services" aria-labelledby="services-title">
+        <div class="section-heading">
+          <div>
+            <h2 id="services-title">Services</h2>
+            <p>Checks run automatically and update in real time.</p>
+          </div>
+          <span class="refresh-label" id="refresh-label">Refresh interval: —</span>
+        </div>
+        <div class="service-list" id="service-list" aria-live="polite">
+          <p class="empty-state">Loading service status…</p>
+        </div>
+      </section>
+
+      <footer>
+        <span>Marketing Skills Monitor</span>
+        <a href="/api/health">Health endpoint</a>
+      </footer>
+    </main>
+  </body>
+</html>
